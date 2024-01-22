@@ -156,11 +156,14 @@ Plug 'sainnhe/edge'
 
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'zivyangll/git-blame.vim'
+Plug 'ellisonleao/glow.nvim'
+Plug 'edluffy/hologram.nvim'
 call plug#end()
 
 
 lua <<EOF
   require("toggleterm").setup()
+  require('glow').setup()
 
   -- Set up nvim-cmp.
   local cmp = require'cmp'
@@ -280,6 +283,10 @@ lua <<EOF
         node_decremental = "grm" -- decrement to the previous node
       }
     },
+  }
+
+  require('hologram').setup{
+    auto_display = true -- WIP automatic markdown image display, may be prone to breaking
   }
 EOF
 
